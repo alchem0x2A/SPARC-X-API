@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Coverage for sparc/io.py: 72%</title>
+    <title>Coverage for sparc/io.py: 73%</title>
     <link rel="icon" sizes="32x32" href="favicon_32_cb_58284776.png">
     <link rel="stylesheet" href="style_cb_8e611ae1.css" type="text/css">
     <script src="coverage_html_cb_6fb7b396.js" defer></script>
@@ -12,7 +12,7 @@
     <div class="content">
         <h1>
             <span class="text">Coverage for </span><b>sparc/io.py</b>:
-            <span class="pc_cov">72%</span>
+            <span class="pc_cov">73%</span>
         </h1>
         <aside id="help_panel_wrapper">
             <input id="help_panel_state" type="checkbox">
@@ -55,8 +55,8 @@
         </aside>
         <h2>
             <span class="text">482 statements &nbsp;</span>
-            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">349<span class="text"> run</span></button>
-            <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">133<span class="text"> missing</span></button>
+            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">351<span class="text"> run</span></button>
+            <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">131<span class="text"> missing</span></button>
             <button type="button" class="exc show_exc button_toggle_exc" value="exc" data-shortcut="x" title="Toggle lines excluded">0<span class="text"> excluded</span></button>
         </h2>
         <p class="text">
@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="z_e32f35a0016f670d_quicktest_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.8.0">coverage.py v7.8.0</a>,
-            created at 2025-04-09 01:55 +0000
+            created at 2025-04-09 05:11 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -1073,7 +1073,7 @@
     <p class="run"><span class="n"><a id="t991" href="#t991">991</a></span><span class="t"><span class="op">@</span><span class="nam">deprecated</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t992" href="#t992">992</a></span><span class="t">    <span class="str">"__register_new_filetype will be deprecated for future releases. Please upgrade ase>=3.23."</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t993" href="#t993">993</a></span><span class="t"><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t994" href="#t994">994</a></span><span class="t"><span class="key">def</span> <span class="nam">__register_new_filetype</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t994" href="#t994">994</a></span><span class="t"><span class="key">def</span> <span class="nam">__register_new_filetype</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t995" href="#t995">995</a></span><span class="t">    <span class="str">"""Register the filetype() function that allows recognizing .sparc as directory</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t996" href="#t996">996</a></span><span class="t"><span class="str">    This method should only be called for ase==3.22 compatibility and for ase-gui</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t997" href="#t997">997</a></span><span class="t"><span class="str">    In future versions of ase gui where format is supported, this method should be removed</span>&nbsp;</span><span class="r"></span></p>
@@ -1100,13 +1100,13 @@
     <p class="pln"><span class="n"><a id="t1018" href="#t1018">1018</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t1019" href="#t1019">1019</a></span><span class="t">    <span class="nam">hacked_formats</span><span class="op">.</span><span class="nam">filetype</span> <span class="op">=</span> <span class="nam">_new_filetype</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t1020" href="#t1020">1020</a></span><span class="t">    <span class="nam">sys</span><span class="op">.</span><span class="nam">modules</span><span class="op">[</span><span class="str">"ase.io.formats"</span><span class="op">]</span> <span class="op">=</span> <span class="nam">hacked_formats</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t1021" href="#t1021">1021</a></span><span class="t">    <span class="key">return</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t1021" href="#t1021">1021</a></span><span class="t">    <span class="key">return</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1022" href="#t1022">1022</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1023" href="#t1023">1023</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t1024" href="#t1024">1024</a></span><span class="t"><span class="op">@</span><span class="nam">deprecated</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1025" href="#t1025">1025</a></span><span class="t">    <span class="str">"register_ase_io_sparc will be deprecated for future releases. Please upgrade ase>=3.23."</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1026" href="#t1026">1026</a></span><span class="t"><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t1027" href="#t1027">1027</a></span><span class="t"><span class="key">def</span> <span class="nam">register_ase_io_sparc</span><span class="op">(</span><span class="nam">name</span><span class="op">=</span><span class="str">"sparc"</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t1027" href="#t1027">1027</a></span><span class="t"><span class="key">def</span> <span class="nam">register_ase_io_sparc</span><span class="op">(</span><span class="nam">name</span><span class="op">=</span><span class="str">"sparc"</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1028" href="#t1028">1028</a></span><span class="t">    <span class="str">"""</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1029" href="#t1029">1029</a></span><span class="t"><span class="str">    **Legacy register of io-formats for ase==3.22**</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1030" href="#t1030">1030</a></span><span class="t"><span class="str">    **For ase>=3.23, use the package entrypoint registration**</span>&nbsp;</span><span class="r"></span></p>
@@ -1222,8 +1222,8 @@
     <p class="pln"><span class="n"><a id="t1140" href="#t1140">1140</a></span><span class="t"><span class="com"># ase>=3.23 uses new ExternalIOFormat as registered entrypoints</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1141" href="#t1141">1141</a></span><span class="t"><span class="com"># Please do not use from ase.io.formats import ExternalIOFormat!</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1142" href="#t1142">1142</a></span><span class="t"><span class="com"># This causes circular import</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t1143" href="#t1143">1143</a></span><span class="t"><span class="key">try</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t1144" href="#t1144">1144</a></span><span class="t">    <span class="key">from</span> <span class="nam">ase</span><span class="op">.</span><span class="nam">utils</span><span class="op">.</span><span class="nam">plugins</span> <span class="key">import</span> <span class="nam">ExternalIOFormat</span> <span class="key">as</span> <span class="nam">EIF</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t1143" href="#t1143">1143</a></span><span class="t"><span class="key">try</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t1144" href="#t1144">1144</a></span><span class="t">    <span class="key">from</span> <span class="nam">ase</span><span class="op">.</span><span class="nam">utils</span><span class="op">.</span><span class="nam">plugins</span> <span class="key">import</span> <span class="nam">ExternalIOFormat</span> <span class="key">as</span> <span class="nam">EIF</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t1145" href="#t1145">1145</a></span><span class="t"><span class="key">except</span> <span class="nam">ImportError</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1146" href="#t1146">1146</a></span><span class="t">    <span class="com"># Backward Compatibility</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t1147" href="#t1147">1147</a></span><span class="t">    <span class="key">from</span> <span class="nam">typing</span> <span class="key">import</span> <span class="nam">List</span><span class="op">,</span> <span class="nam">NamedTuple</span><span class="op">,</span> <span class="nam">Optional</span><span class="op">,</span> <span class="nam">Union</span>&nbsp;</span><span class="r"></span></p>
@@ -1239,7 +1239,7 @@
     <p class="mis show_mis"><span class="n"><a id="t1157" href="#t1157">1157</a></span><span class="t">        <span class="nam">magic</span><span class="op">:</span> <span class="nam">Optional</span><span class="op">[</span><span class="nam">Union</span><span class="op">[</span><span class="nam">bytes</span><span class="op">,</span> <span class="nam">List</span><span class="op">[</span><span class="nam">bytes</span><span class="op">]</span><span class="op">]</span><span class="op">]</span> <span class="op">=</span> <span class="key">None</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t1158" href="#t1158">1158</a></span><span class="t">        <span class="nam">magic_regex</span><span class="op">:</span> <span class="nam">Optional</span><span class="op">[</span><span class="nam">bytes</span><span class="op">]</span> <span class="op">=</span> <span class="key">None</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1159" href="#t1159">1159</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t1160" href="#t1160">1160</a></span><span class="t">    <span class="nam">EIF</span> <span class="op">=</span> <span class="nam">ExternalIOFormat</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t1160" href="#t1160">1160</a></span><span class="t">    <span class="nam">EIF</span> <span class="op">=</span> <span class="nam">ExternalIOFormat</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1161" href="#t1161">1161</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t1162" href="#t1162">1162</a></span><span class="t"><span class="nam">format_sparc</span> <span class="op">=</span> <span class="nam">EIF</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t1163" href="#t1163">1163</a></span><span class="t">    <span class="nam">desc</span><span class="op">=</span><span class="str">"SPARC .sparc bundle"</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
@@ -1280,7 +1280,7 @@
             <a class="nav" href="z_e32f35a0016f670d_quicktest_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.8.0">coverage.py v7.8.0</a>,
-            created at 2025-04-09 01:55 +0000
+            created at 2025-04-09 05:11 +0000
         </p>
     </div>
 </footer>
