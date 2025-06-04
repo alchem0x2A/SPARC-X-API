@@ -367,7 +367,6 @@
         <span class="n">parameter_dict</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern_block</span><span class="p">,</span> <span class="n">text_params</span><span class="p">):</span>
             <span class="n">cat</span> <span class="o">=</span> <span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-            <span class="c1"># print(cat)</span>
             <span class="k">if</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">parameter_categories</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;Key </span><span class="si">{</span><span class="n">cat</span><span class="si">}</span><span class="s2"> already exists! You might have a wrong LaTeX doc file!&quot;</span>
