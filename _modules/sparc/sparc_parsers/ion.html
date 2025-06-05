@@ -264,7 +264,7 @@
     <span class="c1"># @TT 2025.06.04 add support for HUBBARD parameters</span>
     <span class="n">extra_blocks</span> <span class="o">=</span> <span class="n">ion_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;extra&quot;</span><span class="p">,</span> <span class="p">{})</span>
     <span class="k">if</span> <span class="s2">&quot;hubbard&quot;</span> <span class="ow">in</span> <span class="n">extra_blocks</span><span class="p">:</span>
-        <span class="n">_write_hubbard_blocks</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">extra_blocks</span><span class="p">[</span><span class="s2">&quot;hubbard&quot;</span><span class="p">],</span> <span class="n">validator</span><span class="p">)</span>
+        <span class="n">_write_hubbard_block</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">extra_blocks</span><span class="p">[</span><span class="s2">&quot;hubbard&quot;</span><span class="p">],</span> <span class="n">validator</span><span class="p">)</span>
     <span class="k">return</span>
 
 
