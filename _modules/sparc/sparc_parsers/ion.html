@@ -264,6 +264,7 @@
     <span class="c1"># @TT 2025.06.04 add support for HUBBARD parameters</span>
     <span class="n">extra_blocks</span> <span class="o">=</span> <span class="n">ion_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;extra&quot;</span><span class="p">,</span> <span class="p">{})</span>
     <span class="k">if</span> <span class="s2">&quot;hubbard&quot;</span> <span class="ow">in</span> <span class="n">extra_blocks</span><span class="p">:</span>
+        <span class="n">_check_hubbard_block</span><span class="p">(</span><span class="n">ion_dict</span><span class="p">,</span> <span class="n">extra_blocks</span><span class="p">[</span><span class="s2">&quot;hubbard&quot;</span><span class="p">])</span>
         <span class="n">_write_hubbard_block</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">extra_blocks</span><span class="p">[</span><span class="s2">&quot;hubbard&quot;</span><span class="p">],</span> <span class="n">validator</span><span class="p">)</span>
     <span class="k">return</span>
 
@@ -363,6 +364,28 @@
         <span class="n">u_dict</span> <span class="o">=</span> <span class="n">read_block_input</span><span class="p">(</span><span class="n">u_sub_block</span><span class="p">,</span> <span class="n">validator</span><span class="p">)</span>
         <span class="n">u_pairs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u_dict</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">u_pairs</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_check_hubbard_block</span><span class="p">(</span><span class="n">ion_dict</span><span class="p">,</span> <span class="n">hubbard_u_pairs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sanity check for hubbard parameters</span>
+<span class="sd">    1. U_ATOM_TYPE must match one existing element</span>
+<span class="sd">    2. No duplicated element of U_ATOM_TYPE</span>
+<span class="sd">    3. U value must be 4-tuples</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">structure_elements</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;ATOM_TYPE&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">ion_dict</span><span class="p">[</span><span class="s2">&quot;atom_blocks&quot;</span><span class="p">]])</span>
+    <span class="n">hubbard_elements</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">hubbard_u_pairs</span><span class="p">:</span>
+        <span class="n">elem</span> <span class="o">=</span> <span class="n">pair</span><span class="p">[</span><span class="s2">&quot;U_ATOM_TYPE&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">elem</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">structure_elements</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Element </span><span class="si">{</span><span class="n">elem</span><span class="si">}</span><span class="s2"> in the HUBBARD setting does not exist in the input structure!&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">hubbard_elements</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Element </span><span class="si">{</span><span class="n">elem</span><span class="si">}</span><span class="s2"> is duplicated in the HUBBARD setting!&quot;</span><span class="p">)</span>
+        <span class="n">hubbard_elements</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="n">pair</span><span class="p">[</span><span class="s2">&quot;U_VAL&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;U_VAL for element </span><span class="si">{</span><span class="n">elem</span><span class="si">}</span><span class="s2"> must have length of 4!&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_write_hubbard_block</span><span class="p">(</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">u_pairs</span><span class="o">=</span><span class="p">[],</span> <span class="n">validator</span><span class="o">=</span><span class="n">defaultAPI</span><span class="p">):</span>
